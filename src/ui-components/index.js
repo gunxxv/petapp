@@ -11,7 +11,7 @@ export { default as ActionCard } from "./ActionCard";
 export { default as Features2x2 } from "./Features2x2";
 export { default as FAQItem } from "./FAQItem";
 export { default as HeroLayout1 } from "./HeroLayout1";
-export { default as ReviewCard } from "./ReviewCard";
+export { default as PetDetails } from "./PetDetails";
 export { default as CommentCard } from "./CommentCard";
 export { default as ItemCard } from "./ItemCard";
 export { default as NavBar } from "./NavBar";

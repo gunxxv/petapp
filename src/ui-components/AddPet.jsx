@@ -10,6 +10,7 @@ import { Pet } from "../models";
 import {
   getOverrideProps,
   useDataStoreCreateAction,
+  useDataStoreUpdateAction,
   useStateMutationAction,
 } from "@aws-amplify/ui-react/internal";
 import { schema } from "../models/schema";
@@ -57,6 +58,19 @@ export default function AddPet(props) {
       image: textFieldThreeSixFiveNineTwoSevenZeroEightValue,
       color: textFieldThreeSixFiveNineTwoSevenZeroOneValue,
     },
+    model: Pet,
+    schema: schema,
+  });
+  const buttonThreeSixFiveNineTwoSevenOneSixOnClick = useDataStoreUpdateAction({
+    fields: {
+      name: textFieldTwoNineSevenSixSixNineTwoTwoValue,
+      age: textFieldTwoNineSevenSixSixNineTwoThreeValue,
+      breed: textFieldTwoNineSevenSixSixNineTwoFourValue,
+      about: textFieldThreeSixFiveNineTwoSixNineFourValue,
+      image: textFieldThreeSixFiveNineTwoSevenZeroOneValue,
+      color: textFieldThreeSixFiveNineTwoSevenZeroEightValue,
+    },
+    id: pet?.id,
     model: Pet,
     schema: schema,
   });
@@ -328,9 +342,12 @@ export default function AddPet(props) {
           <Button
             shrink="0"
             size="default"
-            isDisabled={true}
+            isDisabled={false}
             variation="primary"
             children="Update"
+            onClick={() => {
+              buttonThreeSixFiveNineTwoSevenOneSixOnClick();
+            }}
             {...getOverrideProps(overrides, "Button36592716")}
           ></Button>
         </Flex>
