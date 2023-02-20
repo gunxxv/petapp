@@ -58,10 +58,10 @@ function App() {
           : updatePet.image,
     },
     Button29766926: {
-      isDisabled: !updatePet ? true : false,
+      isDisabled: updatePet ? true : false,
     },
     Button36592716: {
-      isDisabled: updatePet ? true : false,
+      isDisabled: !updatePet ? true : false,
     },
 
     MyIcon: {
