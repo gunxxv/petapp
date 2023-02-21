@@ -3,11 +3,12 @@ import { NavBar } from "./ui-components";
 import { Footer } from "./ui-components";
 import { AddPet } from "./ui-components";
 import { PetDetails } from "./ui-components";
+import { withAuthenticator } from "@aws-amplify/ui-react";
 
 import "./App.css";
 import { useState } from "react";
 
-function App() {
+function App({ user, signOut }) {
   const [showForm, setShowForm] = useState(false);
   const [showDetails, setShowDetails] = useState(false);
   const [pet, setPet] = useState();
@@ -74,6 +75,9 @@ function App() {
     },
   };
   const navberOverrides = {
+    Button: {
+      onClick: signOut,
+    },
     image: {
       src: "https://img.icons8.com/color/50/000000/cat",
     },
@@ -143,4 +147,4 @@ function App() {
   );
 }
 
-export default App;
+export default withAuthenticator(App);
